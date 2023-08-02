@@ -1,0 +1,303 @@
+/* Animations */
+@keyframes loading{
+    0%{
+        transform-origin: left;
+        transform: scaleX(0);
+    }
+    48%{
+        transform-origin: left;
+        transform: scaleX(1);
+    }
+    52%{
+        transform-origin: right;
+        transform: scaleX(1);
+    }
+    100%{
+        transform-origin: right;
+        transform: scaleX(0);
+    }
+}
+
+@keyframes moving-gradient{
+    0%{
+        background-position: 0 0;
+    }
+    50%{
+        background-position: 50% 0;
+    }
+    100%{
+        background-position: 100% 0;
+    }
+}
+
+.profile-container{
+    width: 100%;
+    height: 100vh;
+    height: 100dvh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(90deg, #009FFF, #00ff88, #009FFF, #00ff88);
+    background-size: 300%;
+    animation-name: moving-gradient;
+    animation-duration : 30s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+.profile-main-area{
+    max-width: 50vw;
+    min-width: 400px;
+    padding: 0px 30px 20px 30px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0px 0px 20px 2px rgba(255, 255, 255, 0.5);
+    position: relative;
+}
+.profile-back-btn{
+    padding: 10px;
+    position: absolute;
+    top: 7px;
+    left: 7px;
+    font-size: 1.6rem;
+    border-radius: 50%;
+    color: #009FFF;
+    background-color: var(--color-0);
+    transition: color 0.3s ease,
+                background-color 0.3s ease;
+    user-select: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.profile-back-btn:hover{
+    background-color: #009FFF;
+    color: var(--color-0);
+}
+.profile-overlay-hide,
+.profile-loading-hide{
+    display: none;
+}
+.profile-loading-display{
+    width: 100%;
+    height: 5px;
+    background-color: var(--color-4);
+    position: absolute;
+    top: 0%;
+    left: 0px;
+    animation-name: loading;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    z-index: 2;
+}
+.profile-overlay-display{
+    width: 100%;
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    background-color: rgba(200, 200, 200, 0.5);
+    z-index: 1;
+}
+.profile-logo{
+    padding: 10px;
+    font-size: 2.6rem;
+    font-weight: bold;
+    text-align: center;
+    color: var(--color-4);
+    user-select: none;
+}
+.profile-header{
+    width: 100%;
+    padding: 15px 0px;
+    font-size: 2rem;
+    text-align: center;
+    user-select: none;
+}
+.profile-email-container,
+.profile-username-container,
+.profile-passsword-container{
+    margin-bottom: 20px;
+}
+.profile-email-label,
+.profile-username-label,
+.profile-password-label{
+    margin-bottom: 5px;
+    font-size: 1.3rem;
+    user-select: none;
+}
+.profile-email-value,
+.profile-username-input,
+.profile-password-input{
+    width: 90%;
+    padding: 7px 5px;
+    margin-right: 10px;
+    font-size: 1.1rem;
+    border-radius: 5px;
+    border: 1px solid grey;
+    background-color: rgb(219, 239, 255);
+    outline: none;
+    user-select: none;
+}
+.profile-email-value,
+.username-input-disable,
+.password-input-disable{
+    overflow-wrap: break-word;
+    font-family:Arial, Helvetica, sans-serif;
+    display: inline-block;
+    cursor: not-allowed;
+}
+.username-input-active,
+.password-input-active{
+    background-color: var(--color-0);
+}
+.password-bullet{
+    width: 0.35rem;
+    height: 0.35rem;
+    margin-right: 3px;
+    border-radius: 50%;
+    display: inline-block;
+    background-color: black;
+}
+.profile-edit-btn,
+.profile-stop-edit-btn{
+    display: inline;
+    font-size: 1.3rem;
+    transition: color 0.2s ease;
+    user-select: none;
+    cursor: pointer;
+}
+.profile-edit-btn{
+    color: rgb(0, 236, 0);
+}
+.profile-stop-edit-btn{
+    color: var(--color-4);
+}
+.profile-edit-btn:hover{
+    color: rgb(0, 164, 0);
+}
+.profile-stop-edit-btn:hover{
+    color: var(--color-5);
+}
+.profile-password-input-container{
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+.profile-password-input{
+    padding-right: 2.2rem;
+}
+.profile-show-password,
+.profile-hide-password{
+    padding: 5px;
+    font-size: 1.3rem;
+    position: absolute;
+    top: 50%;
+    right: 10%;
+    transform: translateY(-50%);
+    z-index: 1;
+    user-select: none;
+    cursor: pointer;
+}
+.profile-show-password{
+    color:rgb(0, 89, 255);
+}
+.profile-hide-password{
+    color: grey;
+}
+.profile-save-changes-btn{
+    min-width: 180px;
+    width: 11.3rem;
+    margin: 0px auto;
+    padding: 10px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    color: var(--color-0);
+    background-color: var(--color-4);
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+    user-select: none;
+}
+.profile-save-changes-btn:hover{
+    background-color: var(--color-5);
+}
+
+/* Profile OTP Verification Start */
+
+.profile-verification-information{
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    user-select: none;
+}
+.profile-verification-otp{
+    position: relative;
+    margin-bottom: 10px;
+}
+.profile-otp-border-hide,
+.profile-otp-border-display{
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    height: 3px;
+    background-color: rgb(0, 82, 196);
+    transition: transform 0.3s ease;
+    transform-origin: left;
+}
+.profile-otp-border-hide{
+    transform: scaleX(0);
+}
+.profile-otp-border-display{
+    transform: scaleX(1);
+}
+.profile-otp-input{
+    width: 100%;
+    padding: 15px 10px;
+    font-size: 1.1rem;
+    border: none;
+    outline: none;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.5);
+}
+.profile-wrong-otp-hide{
+    display: none;
+}
+.profile-wrong-otp-display{
+    font-size: 1.1rem;
+    color: red;
+}
+.profile-resend-otp{
+    width: 100%;
+    margin-bottom: 15px;
+    color: rgb(0, 89, 255);
+    text-align: right;
+    user-select: none;
+}
+.profile-resend-otp span{
+    cursor: pointer;
+}
+.profile-resend-otp span:hover{
+    text-decoration: underline;
+}
+.profile-verify-otp{
+    padding: 15px 0px;
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: var(--color-0);
+    background-color: var(--color-4);
+    transition: background-color 0.3s ease;
+    user-select: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    border-radius: 5px;
+}
+.profile-verify-otp:hover{
+    background-color: var(--color-5);
+}
+
+/* Profile OTP Verification End */

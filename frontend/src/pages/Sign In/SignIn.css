@@ -1,0 +1,517 @@
+/* Animations */
+@keyframes loading{
+    0%{
+        transform-origin: left;
+        transform: scaleX(0);
+    }
+    48%{
+        transform-origin: left;
+        transform: scaleX(1);
+    }
+    52%{
+        transform-origin: right;
+        transform: scaleX(1);
+    }
+    100%{
+        transform-origin: right;
+        transform: scaleX(0);
+    }
+}
+
+@keyframes moving-gradient{
+    0%{
+        background-position: 0 0;
+    }
+    50%{
+        background-position: 50% 0;
+    }
+    100%{
+        background-position: 100% 0;
+    }
+}
+
+.signin-container{
+    width: 100%;
+    height: 100vh;
+    height: 100svh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(90deg, #ff0059, #9900ff, #ff0059, #9900ff);
+    background-size: 300%;
+    animation-name: moving-gradient;
+    animation-duration : 30s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+/* Common CSS Start */
+
+.signin-area,
+.forgot-password-area,
+.signup-area{
+    width: 400px;
+    padding: 0px 30px 20px 30px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0px 0px 20px 2px rgba(255, 255, 255, 0.5);
+    position: relative;
+}
+.signin-back-icon,
+.signup-back-icon,
+.forgot-password-back-icon,
+.signup-verification-back-icon{
+    padding: 10px;
+    position: absolute;
+    top: 7px;
+    left: 7px;
+    font-size: 1.6rem;
+    border-radius: 50%;
+    color: #ff0059;
+    background-color: var(--color-0);
+    transition: color 0.3s ease,
+                background-color 0.3s ease;
+    user-select: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.signin-back-icon:hover,
+.signup-back-icon:hover,
+.forgot-password-back-icon:hover,
+.signup-verification-back-icon:hover{
+    background-color: #ff0059;
+    color: var(--color-0);
+}
+.signin-loading,
+.forgot-password-loading,
+.signup-loading{
+    width: 100%;
+    height: 5px;
+    background-color: var(--color-4);
+    position: absolute;
+    top: 0%;
+    left: 0px;
+    animation-name: loading;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    z-index: 2;
+}
+.signin-overlay,
+.forgot-password-overlay,
+.signup-overlay{
+    width: 100%;
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    background-color: rgba(200, 200, 200, 0.5);
+    z-index: 1;
+}
+.signin-logo,
+.forgot-password-logo,
+.signup-logo,
+.signup-verification-logo{
+    padding: 10px;
+    font-size: 2.6rem;
+    font-weight: bold;
+    text-align: center;
+    color: var(--color-4);
+    user-select: none;
+}
+.signin-header,
+.forgot-password-header,
+.signup-header,
+.signup-verification-header{
+    width: 100%;
+    padding: 15px 0px;
+    font-size: 2rem;
+    text-align: center;
+    user-select: none;
+}
+.signin-username,
+.signin-password,
+.forgot-password-email,
+.signup-username,
+.signup-email,
+.signup-password,
+.signup-confirm-password{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+.signin-username-label-down,
+.signin-username-label-up,
+.signin-password-label-down,
+.signin-password-label-up,
+.forgot-password-email-label-down,
+.forgot-password-email-label-up,
+.signup-username-label-down,
+.signup-username-label-up,
+.signup-email-label-down,
+.signup-email-label-up,
+.signup-password-label-down,
+.signup-password-label-up,
+.signup-confirm-password-label-down,
+.signup-confirm-password-label-up{
+    padding: 0px 5px;
+    position: absolute;
+    left: 10px;
+    transform: translateY(-50%);
+    background-color: var(--color-0);
+    cursor: text;
+    user-select: none;
+    transition: top 0.3s ease,
+                font-size 0.3s ease;
+}
+.signin-username-label-down,
+.signin-password-label-down,
+.forgot-password-email-label-down,
+.signup-username-label-down,
+.signup-email-label-down,
+.signup-password-label-down,
+.signup-confirm-password-label-down{
+    font-size: 1.2rem;
+    top: 50%;
+}
+.signin-username-label-up,
+.signin-password-label-up,
+.forgot-password-email-label-up,
+.signup-username-label-up,
+.signup-email-label-up,
+.signup-password-label-up,
+.signup-confirm-password-label-up{
+    font-size: 1rem;
+    top: 0px;
+}
+.signin-username-input,
+.signin-password-input,
+.forgot-password-email-input,
+.signup-username-input,
+.signup-email-input,
+.signup-password-input,
+.signup-confirm-password-input{
+    font-size : 1.1rem;
+    padding: 17px 10px; 
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+}
+
+/* Common CSS End */
+
+
+
+/* Sign in Start */
+
+.signin-username{
+    margin-bottom: 25px;
+}
+.signin-invalid-hide{
+    display: none;
+}
+.signin-invalid-display{
+    margin-bottom: 10px;
+    color: red;
+    display: block;
+}
+.signin-password{
+    margin-bottom: 7px;
+}
+.signin-show-forgot-password{
+    margin-top: 10px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+.signin-show-password{
+    display: flex;
+    align-items: center;
+}
+.signin-show-password span{
+    user-select: none;
+}
+.signin-show-password-no-icon,
+.signin-show-password-icon{
+    padding: 1px 3px;
+    margin-right: 5px;
+    font-size: 1.1rem;
+    border-radius: 4px;
+    transition: background-color 0.1s ease;
+    user-select: none;
+    cursor: pointer;
+}
+.signin-show-password-no-icon{
+    color: transparent;
+    box-shadow: 0px 0px 0px 1px inset rgba(0, 0, 0, 0.5);
+    background-color: white;
+}
+.signin-show-password-icon{
+    color: white;
+    background-color: rgb(0, 119, 255);
+}
+.signin-show-password-icon:hover{
+    background-color: rgb(0, 82, 196);
+}
+.signin-forgot-password{
+    display: flex;
+    align-items: center;
+    color: rgb(0, 89, 255);
+}
+.signin-forgot-password span{
+    cursor: pointer;
+    user-select: none;
+}
+.signin-forgot-password span:hover{
+    text-decoration: underline;
+}
+.signin-btn{
+    width: 100%;
+    margin-bottom: 15px;
+    padding: 15px 0px;
+    font-size: 1.4rem;
+    border: none;
+    border-radius: 5px;
+    color: var(--color-0);
+    background-color: var(--color-4);
+    user-select: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.signin-btn:hover{
+    background-color: var(--color-5);
+}
+.signin-create-account{
+    width: 100%;
+}
+.signin-create-account span{
+    font-size: 1.3rem;
+    user-select: none;
+    cursor: pointer;
+}
+.signin-create-account span:hover{
+    text-decoration: underline;
+    color: var(--color-5);
+}
+
+/* Sign In End */
+
+/* Forgot Password Start */
+
+.forgot-password-information{
+    font-size: 1.1rem;
+    margin: 5px 0px 25px 0px;
+}
+.forgot-password-no-email-hide,
+.forgot-password-wrong-otp-hide{
+    display: none;
+}
+.forgot-password-no-email-display,
+.forgot-password-wrong-otp-display{
+    margin-top: 7px;
+    color: red;
+}
+.forgot-password-otp-btn{
+    font-size: 1.2rem;
+    margin: 20px 0px 10px 0px;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    background-color: var(--color-4);
+    user-select: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.forgot-password-otp-btn:hover{
+    background-color: var(--color-5);
+}
+.forgot-password-otp{
+    margin: 20px 0px 0px 0px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+.forgot-password-otp:focus-within .forgot-password-otp-border{
+    transform: scaleX(1);
+}
+.forgot-password-otp-border{
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    height: 3px;
+    transform: scaleX(0);
+    background-color: blue;
+    transition: transform 0.5s ease;
+}
+.forgot-password-otp-input{
+    font-size : 1.1rem;
+    padding: 17px 10px; 
+    outline: none;
+    border: none;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.5);
+}
+.forgot-password-resend-otp{
+    margin-top: 7px;
+    display: flex;
+    justify-content: flex-end;
+}
+.forgot-password-resend-otp span{
+    color: rgb(0, 89, 255);
+    user-select: none;
+    cursor: pointer;
+}
+.forgot-password-resend-otp span:hover{
+    text-decoration: underline;
+}
+.forgot-password-verify-otp-hide{
+    display: none;
+}
+.forgot-password-verify-otp-display{
+    width: 100%;
+    padding: 15px 0px;
+    margin-top: 15px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    color: var(--color-0);
+    background-color: var(--color-4);
+    transition: background-color 0.3s ease;
+    user-select: none;
+    cursor: pointer;
+}
+.forgot-password-verify-otp-display:hover{
+    background-color: var(--color-5);
+}
+
+/* Forgot Password End */
+
+/* Sign Up Start */
+
+.signup-username,
+.signup-email,
+.signup-password,
+.signup-confirm-password{
+    margin-bottom: 25px;
+}
+.invalid-user-hide{
+    display: none;
+}
+.invalid-user-display{
+    margin-bottom: 10px;
+    color: red;
+    font-size: 1.1rem;
+}
+.signup-password-input{
+    padding-right: 47px;
+}
+.signup-show-password,
+.signup-hide-password{
+    padding: 5px;
+    font-size: 1.3rem;
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    z-index: 1;
+    user-select: none;
+    cursor: pointer;
+}
+.signup-show-password{
+    color:rgb(0, 89, 255);
+}
+.signup-hide-password{
+    color: grey;
+}
+.signup-next-btn{
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 10px 0px;
+    font-size: 1.3rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    color: var(--color-0);
+    background-color: var(--color-4);
+    transition: background-color 0.3s ease;
+    user-select: none;
+    cursor: pointer;
+}
+.signup-next-btn:hover{
+    background-color: var(--color-5);
+}
+.signup-verification-information{
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    user-select: none;
+}
+.signup-verification-otp{
+    position: relative;
+    margin-bottom: 10px;
+}
+.signup-otp-border-display,
+.signup-otp-border-hide{
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    height: 3px;
+    background-color: rgb(0, 82, 196);
+    transition: transform 0.3s ease;
+    transform-origin: left;
+}
+.signup-otp-border-hide{
+    transform: scaleX(0);
+}
+.signup-otp-border-display{
+    transform: scaleX(1);
+}
+.signup-otp-input{
+    width: 100%;
+    padding: 15px 10px;
+    font-size: 1.1rem;
+    border: none;
+    outline: none;
+    border-bottom:1px solid rgba(0, 0, 0, 0.5);
+}
+.signup-wrong-otp-hide{
+    display: none;
+}
+.signup-wrong-otp-display{
+    font-size: 1.1rem;
+    color: red;
+}
+.signup-resend-otp{
+    width: 100%;
+    margin-bottom: 15px;
+    color: rgb(0, 89, 255);
+    text-align: right;
+    user-select: none;
+}
+.signup-resend-otp span{
+    cursor: pointer;
+}
+.signup-resend-otp span:hover{
+    text-decoration: underline;
+}
+.signup-verify-otp{
+    padding: 15px 0px;
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: var(--color-0);
+    background-color: var(--color-4);
+    transition: background-color 0.3s ease;
+    user-select: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    border-radius: 5px;
+}
+.signup-verify-otp:hover{
+    background-color: var(--color-5);
+}
+
+/* Sign Up End */

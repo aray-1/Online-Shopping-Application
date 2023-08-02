@@ -1,0 +1,159 @@
+.contact-us-wrapper{
+    height: 100vh;
+    background: url("../../../public/Images/contact-us-background.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.contact-us-container{
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+}
+.back-btn{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    color: var(--color-0);
+    transition: transform 0.05s ease;
+    transform-origin: center;
+    background: radial-gradient(circle, rgba(255, 0, 93, 1), rgba(255, 0, 93, 0.2));
+    user-select: none;
+    cursor: pointer;
+}
+.back-btn:hover{
+    transform: scale(1.1);
+}
+.contact-us-information{
+    width: 400px;
+    margin-right: 5vw;
+    position: relative;
+    border-radius: 7px;
+    background: linear-gradient(45deg, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.2));
+    box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+}
+.contact-us-information-blur{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    bottom: 0px;
+    right: 0px;
+    background-color: rgba(255, 255, 255, 0.7);
+    filter: blur(200px);
+}
+.contact-us-introduction{
+    padding: 0px 10px;
+}
+.contact-us-introduction-header{
+    padding: 7px 0px;
+    font-size: 4rem;
+    font-weight: bold;
+    color: rgb(255, 0, 98);
+}
+.contact-us-introduction-text{
+    margin-top: 10px;
+    padding: 10px;
+    font-size: 1.3rem;
+    line-height: 1.5;
+    border-radius: 10px;
+    color: rgb(0, 0, 0);
+}
+.contact-us-socials-header{
+    padding: 7px 15px;
+    margin-top: 10px;
+    font-size: 2rem;
+    font-weight: bold;
+    color: rgb(0, 0, 0);
+}
+.contact-us-socials-icons{
+    display: flex;
+    align-items: center;
+    padding: 0px 5px;
+}
+.contact-us-form-area{
+    width: 400px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 7px;
+    background: linear-gradient(-45deg, rgba(255, 0, 195, 0.3), rgba(255, 94, 0, 0.3));
+    backdrop-filter: blur(10px);
+    box-shadow: -2px -2px 10px 2px rgba(0, 0, 0, 0.3),
+                0px 0px 15px 1px inset rgba(255, 255, 255, 0.3);
+}
+.contact-us-name-label,
+.contact-us-email-label,
+.contact-us-message-label{
+    font-size: 1.6rem;
+    padding: 10px;
+    border-radius: 5px;
+    color: var(--color-0);
+}
+.contact-us-name-input,
+.contact-us-email-input,
+.contact-us-message-input{
+    outline: none;
+    font-size: 1.2rem;
+    padding: 7px;
+    margin: 10px 0px;
+    border-radius: 5px;
+    border-width: 0px;
+    color: white;
+    background: linear-gradient(45deg, rgba(255, 0, 195, 0.6), rgba(255, 94, 0, 0.6));
+    transition: background-color 0.3s ease;
+}
+.contact-us-name-input:focus,
+.contact-us-email-input:focus,
+.contact-us-message-input:focus{
+    background-color: rgba(220, 0, 220, 0.5);
+}
+.contact-us-message-input{
+    resize: none;
+    height: 100px;
+    font-size: 1.1rem;
+    font-family:Georgia, 'Times New Roman', Times, serif
+}
+.contact-us-message-input::-webkit-scrollbar{
+    width: 0.3rem;
+}
+.contact-us-message-input::-webkit-scrollbar-track{
+    background-color: rgb(203, 203, 203);
+    border-radius: 100vw;
+    margin: 2px 0px;
+}
+.contact-us-message-input::-webkit-scrollbar-thumb{
+    border-radius: 100vw;
+    background: rgb(255, 0, 93);
+    border: 1px solid rgb(203, 203, 203);
+}
+.submit-btn{
+    font-size: 1.5rem;
+    padding: 10px 0px;
+    margin-top: 10px;
+    border-radius: 5px;
+    border-width: 0px;
+    color: var(--color-0);
+    background: linear-gradient(45deg, rgba(255, 0, 195, 0.4), rgba(255, 94, 0, 0.4));
+    transition: background-color 0.3s ease;
+    user-select: none;
+    cursor: pointer;
+}
+.submit-btn:hover{
+    background-color: rgba(220, 0, 220, 0.5);
+}
+.submit-btn-inactive{
+    cursor: not-allowed;
+}
+.submit-btn-inactive:hover{
+    background-color: transparent;
+}
